@@ -380,7 +380,7 @@ body {
   border: 1px solid #eee;
   border-radius: 12px;
   overflow: hidden;
-  background: #fff;
+  /* background: #fff; */
   transition: all 0.3s ease;
 }
 
@@ -445,4 +445,184 @@ body {
 .btn-view-more:hover {
   background: var(--primary-light);
   color: var(--text-dark);
+}
+
+
+
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.testimonial-scroller {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* Gradient fade edges */
+.testimonial-scroller::before,
+.testimonial-scroller::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.testimonial-scroller::before {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.testimonial-scroller::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+.scroll-content {
+  display: flex;
+  gap: 2rem;
+  animation: scroll-left 25s linear infinite;
+}
+
+.testimonial-scroller:hover .scroll-content {
+  animation-play-state: paused; /* pause on hover */
+}
+
+.testimonial-item {
+  min-width: 350px;
+  max-width: 350px;
+  border-left: 3px solid var(--primary);
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  color: var(--text-dark);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.client-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.client-name {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.client-role {
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+/* Keyframes for smooth left scrolling */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+
+
+
+
+.footer {
+  background: #fff;
+  border-top: 1px solid #eee;
+  color: var(--text-dark);
+}
+
+.footer-logo {
+  height: 42px;
+}
+
+.brand-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  max-width: 260px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-social a {
+  font-size: 1.2rem;
+  margin-left: 12px;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: var(--primary);
+}
+
+.footer-bottom {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  border-top: 1px solid #eee;
 }
