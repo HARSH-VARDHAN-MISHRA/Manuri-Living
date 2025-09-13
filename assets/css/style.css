@@ -26,6 +26,9 @@ body {
   --bg-light: #f8f5f2;
   --text-dark: #3c2f2f;
   --text-light: #7a6c6c;
+
+
+   --color-secondary: #128c7e;
 }
 
 
@@ -46,59 +49,29 @@ body {
 
 
 
-/* Logo */
-.logo {
-  height: 60px;
-}
 
-/* Navbar Premium Styling */
-.custom-navbar {
-  padding: 0.8rem 0;
-  transition: all 0.3s ease;
-}
 
-.custom-navbar.scrolled {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-}
 
-.navbar .brand-name {
-  color: var(--primary);
-  font-size: 1.4rem;
-  letter-spacing: 0.5px;
-}
 
-/* Nav links */
-.navbar .nav-link {
-  position: relative;
-  color: var(--text-dark);
-  margin-left: 1.5rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
 
-.navbar .nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: var(--primary);
-  transition: width 0.3s ease;
-}
 
-.navbar .nav-link:hover {
-  color: var(--primary);
-}
 
-.navbar .nav-link:hover::after,
-.navbar .nav-link.active::after {
-  width: 100%;
-}
 
-.navbar .nav-link.active {
-  color: var(--primary);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -522,9 +495,9 @@ body {
   animation: scroll-left 25s linear infinite;
 }
 
-.testimonial-scroller:hover .scroll-content {
-  animation-play-state: paused; /* pause on hover */
-}
+/* .testimonial-scroller:hover .scroll-content {
+  animation-play-state: paused; 
+} */
 
 .testimonial-item {
   min-width: 350px;
@@ -587,42 +560,744 @@ body {
   height: 42px;
 }
 
-.brand-text {
-  font-size: 1.3rem;
+.footer-title {
+  font-size: 1rem;
   font-weight: 600;
+  margin-bottom: 1rem;
   color: var(--primary);
 }
 
-.footer-tagline {
+.footer-text {
   font-size: 0.9rem;
   color: var(--text-light);
   max-width: 260px;
 }
 
+/* Quick Links */
 .footer-links a {
   text-decoration: none;
   color: var(--text-dark);
   font-weight: 500;
   transition: color 0.3s ease;
+  display: block;
+  margin-bottom: 0.6rem;
 }
 
 .footer-links a:hover {
   color: var(--primary);
 }
 
-.footer-social a {
-  font-size: 1.2rem;
-  margin-left: 12px;
-  color: var(--text-dark);
-  transition: color 0.3s ease;
+/* Contact Info (Aligned like mobile) */
+.footer-contact p {
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.footer-social a:hover {
+.footer-contact i {
+  width: 18px;
+  text-align: center;
   color: var(--primary);
 }
 
+.footer-contact a {
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  flex: 1;
+}
+
+.footer-contact a:hover {
+  color: var(--primary);
+}
+
+/* Social Icons Circle Style */
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Bottom Bar */
 .footer-bottom {
   font-size: 0.85rem;
   color: var(--text-light);
   border-top: 1px solid #eee;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================
+   HEADER STYLING
+====================== */
+.main-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  padding: 0.8rem 0;
+}
+
+/* Scroll Effect */
+.main-header.scrolled {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Logo */
+.logo {
+  height: 60px;
+}
+
+.brand-name {
+  display: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+}
+
+/* ======================
+   NAVIGATION (Desktop)
+====================== */
+.nav-list {
+  list-style: none;
+  gap: 2rem;
+  position: relative;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list li a {
+  position: relative;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
+  padding-bottom: 4px;
+}
+
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-list li a:hover,
+.nav-list li a.active {
+  color: var(--primary);
+}
+
+.nav-list li a:hover::after,
+.nav-list li a.active::after {
+  width: 100%;
+}
+
+/* ======================
+   DROPDOWN (Desktop)
+====================== */
+.dropdown-menu {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  list-style: none;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  z-index: 999;
+}
+
+.dropdown-menu li {
+  margin: 0.5rem 0;
+}
+
+.dropdown-menu li a {
+  font-weight: 500;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  color: var(--primary);
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ======================
+   MOBILE MENU (Sidebar)
+====================== */
+.menu-toggle {
+  border: none;
+  background: none;
+  font-size: 1.6rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  z-index: 1100;
+  padding: 1.5rem;
+  box-shadow: 4px 0 16px rgba(0,0,0,0.08);
+  transition: left 0.3s ease;
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.mobile-header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.close-menu {
+  border: none;
+  background: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-nav li {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.mobile-nav li a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.mobile-nav li a:hover {
+  color: var(--primary);
+}
+
+/* Mobile Dropdown */
+.mobile-dropdown {
+  display: block; 
+  cursor: pointer;
+  position: relative;
+}
+.mobile-dropdown .toggle-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+/* Submenu hidden by default */
+.mobile-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding-left: 0; /* default no padding */
+}
+
+/* When open */
+.mobile-dropdown.open .mobile-submenu {
+  max-height: 400px; /* enough height for items */
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Submenu links */
+.mobile-submenu li {
+  margin-bottom: 0.6rem;
+}
+
+.mobile-submenu li a {
+  font-weight: 500;
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.mobile-submenu li a:hover {
+  color: var(--primary);
+}
+
+
+.toggle-icon {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.mobile-dropdown.open .toggle-icon i::before {
+  content: "\f068"; /* FontAwesome minus icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+/* ======================
+   MOBILE EXTRA INFO
+====================== */
+.mobile-extra {
+  border-top: 1px solid #eee;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+
+/* Contact Info */
+.mobile-extra .contact-info p {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between icon and text */
+}
+
+.mobile-extra .contact-info i {
+  width: 18px;       /* icons ko ek proper width de diya */
+  text-align: center;
+  color: var(--primary);
+}
+
+.mobile-extra .contact-info a {
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  flex: 1; /* text expand kare aur neatly align ho */
+}
+
+.mobile-extra .contact-info a:hover {
+  color: var(--primary);
+}
+
+/* Social Links Circle Style */
+.mobile-extra .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.mobile-extra .social-links a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.mobile-extra .social-links a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ======================
+   OVERLAY
+====================== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Breadcrumb Universal */
+.breadcrumb-wrapper {
+  background: var(--bg-light);
+  padding: 0.75rem 0;
+  font-size: 0.9rem;
+}
+
+.breadcrumb-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.breadcrumb-list li {
+  position: relative;
+  color: var(--text-dark);
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+  content: "›";
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: var(--text-light);
+}
+
+.breadcrumb-list a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-list a:hover {
+  color: var(--primary-dark);
+}
+
+.breadcrumb-list .active {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.custom-sofa-section {
+    background: linear-gradient(135deg, #fff9f5, #fdfdfd);
+    border-radius: 16px;
+    padding: 3rem 1.5rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    margin: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-sofa-section::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: var(--primary);
+    opacity: 0.05;
+    border-radius: 50%;
+    top: -30px;
+    right: -50px;
+}
+
+.custom-sofa-section::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: var(--primary-light);
+    opacity: 0.08;
+    border-radius: 50%;
+    bottom: -20px;
+    left: -30px;
+}
+
+/* Text */
+.custom-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.custom-section-desc {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Image */
+.custom-section-img {
+    max-width: 100%;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+.custom-section-img:hover {
+    transform: scale(1.03);
+}
+
+/* Button */
+.custom-sofa-section .btn-custom-primary {
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.55rem 1.8rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+}
+.custom-sofa-section .btn-custom-primary:hover {
+    background: #5a3d2f;
+    transform: translateY(-2px);
+}
+
+/* Responsive tweaks */
+@media(max-width:768px){
+    .custom-sofa-section {
+        text-align: center;
+    }
+    .custom-sofa-section .custom-section-img {
+        margin-top: 1.5rem;
+    }
+}
+
+
+
+/* Buttons container */
+.custom-section-buttons .btn {
+    flex: 1 1 48%; /* 50-50% desktop */
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 0.55rem 1.8rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Mobile full width */
+@media(max-width:768px){
+    .custom-section-buttons .btn {
+        flex: 1 1 100%;
+    }
+}
+
+/* Call Button */
+.custom-section-buttons .btn-call {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.custom-section-buttons .btn-call:hover {
+    background: #5a3d2f;
+    transform: translateY(-2px);
+}
+
+/* WhatsApp Button */
+.custom-section-buttons .btn-whatsapp {
+    background: var(--color-secondary);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    overflow: hidden;
+}
+
+/* Shine effect */
+.custom-section-buttons .btn-whatsapp.shine-btn::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: -32px;
+    width: 20px;
+    height: 200%;
+    background: #fff;
+    transform: rotate(16deg);
+    opacity: 0.15;
+    animation: bttnmove 2s infinite;
+}
+
+@keyframes bttnmove {
+    0% { left: -32px; }
+    100% { left: 100%; }
+}
+
+.custom-section-buttons .btn-whatsapp:hover {
+    background-color: var(--color-secondary);
+    transform: scale(1.05);
+}
+.custom-section-buttons .btn-whatsapp:hover::before {
+    animation: bttnmove 1s infinite;
+    opacity: 0.35;
+}
+.custom-section-buttons .btn-whatsapp:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
